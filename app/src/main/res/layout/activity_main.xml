@@ -45,7 +45,7 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="190dp"
+        android:layout_width="160dp"
         android:layout_height="45dp"
         android:text="×"
         android:layout_alignParentLeft="true"
@@ -54,7 +54,7 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="190dp"
+        android:layout_width="160dp"
         android:layout_height="45dp"
         android:text="÷"
         android:layout_alignParentRight="true"
