@@ -10,7 +10,8 @@ import android.support.v4.app.SupportActivity
 import android.support.v4.app.SupportActivity.ExtraData
 import android.support.v4.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-
+import android.text.TextUtils
+import android.text.TextUtils.*
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -23,10 +24,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 button4.setOnClickListener (this)
         }
         override fun onClick(v: View) {
+            if(!editText1.toString().isEmpty() && !editText2.toString().isEmpty()){
                 val intent = Intent(this, SecondActivity::class.java)
                 val a = editText1.toString().toDouble()
-                val b = editText2.toString().toDouble()
-                if (v.id == R.id.button1) {
+                var b = editText2.toString().toDouble()
+                  if (v.id == R.id.button1) {
                         intent.putExtra("VALUE",a+b)
                         startActivity(intent)
                 } else if (v.id == R.id.button2) {
@@ -37,9 +39,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                         startActivity(intent)
                 } else if (v.id == R.id.button4) {
                         intent.putExtra("VALUE",a/b)
-                        startActivity(intent)
+                        startActivity(intent)}
         }
-        }
-}
-
+        }}
 
