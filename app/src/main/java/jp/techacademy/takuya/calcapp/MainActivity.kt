@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        if (!editText1.toString().isEmpty() && !editText2.toString().isEmpty()) {
+        if (!editText1.text.toString().isEmpty() && !editText2.text.toString().isEmpty()) {
             val intent = Intent(this, SecondActivity::class.java)
             val a = editText1.text.toString().toDouble()
             val b = editText2.text.toString().toDouble()
