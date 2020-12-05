@@ -18,26 +18,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View) {
         if (!editText1.toString().isEmpty() && !editText2.toString().isEmpty()) {
             val intent = Intent(this, SecondActivity::class.java)
-            val a = editText1.text.toString()
-            val b = editText2.text.toString()
+            val a = editText1.text.toString().toDouble()
+            val b = editText2.text.toString().toDouble()
             if (v.id == R.id.button1) {
-                intent.putExtra("VALUE1", a)
-                intent.putExtra("VALUE2", b)
+                intent.putExtra("VALUE1", a+b)
                 startActivity(intent)
             }
-            if (v.id == R.id.button2) {
-                intent.putExtra("VALUE3", a)
-                intent.putExtra("VALUE4", b)
+            else if (v.id == R.id.button2) {
+                intent.putExtra("VALUE1", a-b)
                 startActivity(intent)
             }
-            if (v.id == R.id.button3) {
-                intent.putExtra("VALUE5", a)
-                intent.putExtra("VALUE6", b)
+            else if (v.id == R.id.button3) {
+                intent.putExtra("VALUE1", a*b)
                 startActivity(intent)
             }
-            if (v.id == R.id.button4) {
-                intent.putExtra("VALUE7", a)
-                intent.putExtra("VALUE8", b)
+            else if (v.id == R.id.button4) {
+                intent.putExtra("VALUE1", a/b)
                 startActivity(intent)
             }
         }
